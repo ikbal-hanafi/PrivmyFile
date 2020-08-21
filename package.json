@@ -11,6 +11,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.16.0",
+    "filesize": "^6.1.0",
+    "md5js": "^1.0.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
