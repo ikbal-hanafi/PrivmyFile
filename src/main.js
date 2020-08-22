@@ -16,6 +16,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 
 
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

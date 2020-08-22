@@ -7,7 +7,7 @@
             <b-input-group>
               <b-form-input v-model="passwordmu" :type="so_pass" placeholder="Enter Your Password" :state="cek_password" autocomplete="off"></b-form-input>
               <b-input-group-append>
-                <b-button variant="outline-dark" v-on:click="show_passwd = !show_passwd"><b-icon :icon="ic_pass"></b-icon></b-button>
+                <b-button variant="outline-dark" @click="show_paswd = !show_paswd"><b-icon :icon="ic_pass"></b-icon></b-button>
               </b-input-group-append>
             </b-input-group>
           </div>
@@ -16,10 +16,10 @@
             <b-input-group class="mb-3">
               <b-form-input v-model="passwordmu" :type="so_pass" placeholder="Enter New Password" autocomplete="off"></b-form-input>
               <b-input-group-append>
-                <b-button variant="outline-dark" v-on:click="show_passwd = !show_passwd"><b-icon :icon="ic_pass"></b-icon></b-button>
+                <b-button variant="outline-dark" @click="show_paswd = !show_paswd;"><b-icon :icon="ic_pass"></b-icon></b-button>
               </b-input-group-append>
             </b-input-group>
-            <b-button variant="dark" v-on:click="save_password">save password</b-button>
+            <b-button variant="dark" @click="save_password">save password</b-button>
           </div>
          </b-card>
       </b-col>
@@ -31,7 +31,11 @@
 
 import {md5} from "md5js";
 import {password_pin} from "@/data";
-
+/*
+Object.keys(window.localStorage).forEach(e => {
+  window.localStorage.removeItem(e);
+});
+*/
 
 export default {
  name: "Home",
@@ -46,7 +50,8 @@ export default {
      if(!(this.passwordmu.length < 8)){
        window.localStorage.setItem("password_pin", md5(this.passwordmu.trim()));
        window.location = "/list_file"
-       
+     }else{
+       window.location.reload();
      }
    }
  },
