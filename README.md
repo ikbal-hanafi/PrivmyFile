@@ -1,4 +1,4 @@
-# privmy
+# PrivmyFile
 
 > privat your file 
 
